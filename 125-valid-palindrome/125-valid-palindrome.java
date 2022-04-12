@@ -10,12 +10,10 @@ class Solution {
         boolean flag=false;
         while(i<j){
             if(s.charAt(i)==s.charAt(j)){
-                //System.out.println("kutiya");
                 flag=true;
                 i++;
                 j--;
-            }else{
-                //System.out.println("cat");  
+            }else{        
                 flag=false;
                  break;    
             }
