@@ -10,8 +10,7 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode temp=new ListNode();
-        temp=head;
+        ListNode temp=head;
         ListNode answerNode=head;        
         int countLength=1;
         while(temp.next!=null){
