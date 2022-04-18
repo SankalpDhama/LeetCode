@@ -15,15 +15,9 @@ public class Solution extends VersionControl {
             }else if(!isBadVersion(BinaryMid)){
                // System.out.println("good boy");
                 start=BinaryMid+1;
-            }else {
-                break;
             }
         }        
-        if(isBadVersion(BinaryMid) && isBadVersion(BinaryMid+1))
-        {
-            return BinaryMid;
-        }
-        else if(!(isBadVersion(BinaryMid)) && isBadVersion(BinaryMid+1))
+        if(!(isBadVersion(BinaryMid)) && isBadVersion(BinaryMid+1))
             {
             return BinaryMid+1;
             }
