@@ -17,12 +17,6 @@ public class Solution extends VersionControl {
                 start=BinaryMid+1;
             }
         }        
-        if(!(isBadVersion(BinaryMid)) && isBadVersion(BinaryMid+1))
-            {
-            return BinaryMid+1;
-            }
-        else{
-            return BinaryMid;
-        }
+        return start;
     }   
 }
