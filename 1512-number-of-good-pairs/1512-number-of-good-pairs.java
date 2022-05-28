@@ -1,13 +1,18 @@
 class Solution {
     public int numIdenticalPairs(int[] nums) {
-       int noOfGoodPairs=0;
+        int sum=0;
+        HashMap<Integer,Integer> pairs=new HashMap<>();
         for(int i=0;i<nums.length;i++){
-           for(int j=i;j<nums.length;j++) {
-               if(nums[i]==nums[j] && i<j){
-                   noOfGoodPairs++;
-               }
-           }
+        int count=0;
+            if(pairs.get(nums[i])!=null){
+                count=pairs.get(nums[i]);
+                count++;
+                sum+=count;
+            }
+            pairs.put(nums[i],count);
+           // System.out.println(pairs+"for the "+i+" number");
         }
-        return noOfGoodPairs;
+       // System.out.println(pairs);
+        return sum;
     }
 }
