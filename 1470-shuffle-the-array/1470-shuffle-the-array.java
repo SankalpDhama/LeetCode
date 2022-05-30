@@ -3,8 +3,10 @@ class Solution {
         int[] shuffledArray=new int[2*n];
         int shuffledArrayIndex=0;
        for(int i=0;i<n;i++){
-           shuffledArray[shuffledArrayIndex++]=nums[i];
-           shuffledArray[shuffledArrayIndex++]=nums[n+i];
+           shuffledArray[shuffledArrayIndex]=nums[i];
+           shuffledArrayIndex++;
+           shuffledArray[shuffledArrayIndex]=nums[n+i];
+           shuffledArrayIndex++;
        }
         return shuffledArray;
     }
