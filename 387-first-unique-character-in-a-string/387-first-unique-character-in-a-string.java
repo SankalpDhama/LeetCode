@@ -6,11 +6,9 @@ class Solution {
         for(int i=0;i<size;i++){
             if(uniqueMap.containsKey(s.charAt(i))){
                 count=uniqueMap.get(s.charAt(i));
-                uniqueMap.put(s.charAt(i),++count);
-                System.out.println("addedcount: "+s.charAt(i));
+                uniqueMap.put(s.charAt(i),++count);               
             }else{
-                count=1;
-                System.out.println("added: "+s.charAt(i));
+                count=1;                
                 uniqueMap.put(s.charAt(i),count);
             }
         }
