@@ -5,12 +5,10 @@ class Solution {
         int[] mergedArray=new int[size1+size2];
         int i=0,j=0,k=0;        
         while(i<size1 && j<size2){
-          if(nums1[i]<nums2[j]){
-              //System.out.println("bitch");
+          if(nums1[i]<nums2[j]){            
               mergedArray[k]=nums1[i];
               i++;
-          }else{
-              //System.out.println("bheesh");
+          }else{             
               mergedArray[k]=nums2[j];
               j++;              
           }
@@ -25,14 +23,12 @@ class Solution {
             mergedArray[k]=nums2[j];
             j++;
             k++;
-        }
-        System.out.println(Arrays.toString(mergedArray));
+        }       
         int mergedArraySize=size1+size2;
         int medianIndex=0;
         double median=0;
         if(mergedArraySize%2==0){
             medianIndex=mergedArraySize/2;
-            System.out.println(mergedArray[medianIndex]+mergedArray[medianIndex-1]);
             median=(mergedArray[medianIndex]+mergedArray[medianIndex-1])/2.0d;
         }else{
             medianIndex=mergedArraySize/2;
