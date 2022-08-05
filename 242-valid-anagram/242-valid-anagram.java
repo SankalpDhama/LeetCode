@@ -2,27 +2,19 @@ class Solution {
     public boolean isAnagram(String s, String t) {
         int sizeS=s.length();
         int sizeT=t.length();
+        int[] alpha=new int[26];
         if(sizeS!=sizeT){
             return false;
-        }    
-        HashMap<Character,Integer> anagramMap=new HashMap<>();
+        }           
         for(int i=0;i<sizeS;i++){
-            int count=0;
-            if(anagramMap.containsKey(s.charAt(i))){
-                count=anagramMap.get(s.charAt(i));
-                anagramMap.put(s.charAt(i),++count);                
-            }else{
-                anagramMap.put(s.charAt(i),++count);
-            }
+            alpha[(int)s.charAt(i)-97]++; 
         }
         for(int i=0;i<sizeT;i++){
-            int count=0;
-            if((anagramMap.containsKey(t.charAt(i))) && (anagramMap.get(t.charAt(i))!=0)){
-                count=anagramMap.get(t.charAt(i));
-                anagramMap.put(t.charAt(i),--count);
+            if(alpha[(int)t.charAt(i)-97]!=0){
+                alpha[(int)t.charAt(i)-97]--;
             }else{
                 return false;
-            }
+            }            
         }
         return true;
     }
