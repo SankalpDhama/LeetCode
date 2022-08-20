@@ -1,3 +1,4 @@
+[Discussion Post (created on 20/7/2022 at 8:19)](https://leetcode.com/problems/rotate-array/discuss/2451359/Java-2ms)  
 <h2>  Rotate Array</h2><hr><div><p>Given an array, rotate the array to the right by <code>k</code> steps, where <code>k</code> is non-negative.</p>
 
 <p>&nbsp;</p>
