@@ -14,18 +14,17 @@
  * }
  */
 class Solution {
-    boolean isUni(TreeNode root,int val,boolean flag){
+    boolean isUni(TreeNode root,int val){
         if(root==null){
             return true;
         }
         if(root.val!=val){
-            flag=false;
-            return flag;
+            return false;
         }
-        return (isUni(root.left,val,flag) && isUni(root.right,val,flag));
+        return (isUni(root.left,val) && isUni(root.right,val));
     }
     public boolean isUnivalTree(TreeNode root) {
         int val=root.val;
-        return isUni(root,val,true);
+        return isUni(root,val);
     }
 }
