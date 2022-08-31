@@ -9,20 +9,26 @@
  * }
  */
 class Solution {
-    void del(ListNode cur){
-       if(cur==null || cur.next==null){
-           return;
-       }
-        int curVal=cur.val;
-        if(curVal==cur.next.val){
-            cur.next=cur.next.next;
-            del(cur);
-        }
-        del(cur.next);
-    }
+    // void del(ListNode cur){
+    //    if(cur==null || cur.next==null){
+    //        return;
+    //    }
+    //     int curVal=cur.val;
+    //     if(curVal==cur.next.val){
+    //         cur.next=cur.next.next;
+    //         del(cur);
+    //     }
+    //     del(cur.next);
+    // }
     public ListNode deleteDuplicates(ListNode head) {
         ListNode cur=head;
-        del(cur);
+        while(cur!=null && cur.next!=null){
+            if(cur.val==cur.next.val){
+                cur.next=cur.next.next;
+            }else{
+                cur=cur.next;
+            }
+        }
         return head;
     }
 }
