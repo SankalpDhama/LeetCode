@@ -10,15 +10,26 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        ArrayList<Integer> palindrome=new ArrayList<>();
+        //ArrayList<Integer> palindrome=new ArrayList<>();
         ListNode cur=head;
+        int length=0;
         while(cur!=null){
-            palindrome.add(cur.val);
+            //palindrome.add(cur.val);
+            length++;
             cur=cur.next;
         }
-        int size=palindrome.size();
-        for(int i=0;i<size/2;i++){
-            if(palindrome.get(i)!=palindrome.get(size-1-i)){
+        int[] palindrome=new int[length];
+        int i=0;
+        cur=head;
+         while(cur!=null){
+            palindrome[i]=cur.val;
+           //  System.out.println(cur.val);
+            cur=cur.next;
+            i++;
+        }
+       // System.out.println(Arrays.toString(palindrome));
+        for(int j=0;j<length/2;j++){
+            if(palindrome[j]!=palindrome[length-1-j]){
                 return false;
             }
         }
