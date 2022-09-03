@@ -27,7 +27,7 @@ class Solution {
        // System.out.println(k+"k");
         //System.out.println("length"+length);
         int index=Math.abs(k-length);
-        System.out.println(index+"index");
+       // System.out.println(index+"index");
         int nodeInd=1;
         ListNode newLastNode=head;
         while(nodeInd!=index){
