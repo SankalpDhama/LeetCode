@@ -10,27 +10,12 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        ListNode temp=head;
-        ListNode answerNode=head;        
-        int countLength=1;
-        while(temp.next!=null){
-            temp=temp.next;
-            countLength++;
+        ListNode slow=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
         }
-        // //System.out.println(countLength);
-        // if(countLength%2==0){
-        //     countLength=countLength/2;
-        //    System.out.println(countLength+"this is even length");
-        // }else{
-        //     countLength=countLength/2;
-        //    // System.out.println(countLength+"this is odd length");
-        // }
-        countLength=countLength/2;
-        
-        for(int i=1;i<=countLength;i++){
-            answerNode=answerNode.next;
-            //System.out.println()
-        }
-        return answerNode;
+        return slow;
     }
 }
