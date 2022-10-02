@@ -14,29 +14,23 @@
  * }
  */
 class Solution {
-    void preOrder(TreeNode root,LinkedList<TreeNode> answerList){
+    void preOrder(TreeNode root){
         if(root==null){
             return;
         }
-        answerList.add(root);
-        preOrder(root.left,answerList);
-        preOrder(root.right,answerList);
+        preOrder(root.left);
+        preOrder(root.right);
+        TreeNode left=root.left;
+        TreeNode right=root.right;
+        root.left=null;
+        root.right=left;
+        TreeNode p=root;
+        while(p.right!=null){
+            p=p.right;
+        }
+        p.right=right;   
     }
-    public void flatten(TreeNode root){
-        if(root==null){
-            return;
-        }
-        if(root.left==null && root.right==null){
-            return;
-        }
-        LinkedList<TreeNode> answerList=new LinkedList<>();
-        preOrder(root,answerList);
-        int i=0;
-        while(answerList.size()!=i){
-            root.right=answerList.get(i);
-            root.left=null;
-            root=root.right;
-            i++;
-        }
+    public void flatten(TreeNode root) {
+        preOrder(root);
     }
 }
