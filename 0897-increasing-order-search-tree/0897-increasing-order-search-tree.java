@@ -14,29 +14,25 @@
  * }
  */
 class Solution {
-    void inOrder(TreeNode root,Queue<TreeNode> nodeQueue){
+    TreeNode cur;
+    void inOrder(TreeNode root){
         if(root==null){
             return;
         }
-        inOrder(root.left,nodeQueue);
-        nodeQueue.offer(root);
-        inOrder(root.right,nodeQueue);
+        inOrder(root.left);
+        root.left=null;
+        cur.right=root;
+        cur=cur.right;
+        inOrder(root.right);
     }
     
     public TreeNode increasingBST(TreeNode root) {
         if(root.left==null && root.right==null){
             return root;
         }
-        Queue<TreeNode> nodeQueue=new LinkedList<>();
-        inOrder(root,nodeQueue);
-        root=nodeQueue.poll();
-        TreeNode cur=root;
-        while(!nodeQueue.isEmpty()){
-            cur.right=nodeQueue.poll();
-            cur.left=null;
-            cur=cur.right;
-        }
-        cur.left=null;
-        return root;
+        TreeNode helper=new TreeNode(0);
+        cur=helper;
+        inOrder(root);
+        return helper.right;
     }
 }
