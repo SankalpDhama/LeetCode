@@ -24,11 +24,9 @@ class GFG {
 class Solution {
     static int setBits(int N) {
         int answer=0;
-        while(N!=0){
-            if(N%2!=0){
-                answer++;
-            }
-            N/=2;
+        while(N>0){
+            N=N&(N-1);
+            answer++;
         }
         return answer;
     }
